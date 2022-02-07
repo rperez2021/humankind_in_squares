@@ -6,22 +6,17 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo" height="100px" width="100px" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome to Humankind In Squares
+          <br></br>
+          Feel free to Add!
         </p>
-        <h1 className="text-3xl font-bold underline">
-          Hello world!
-        </h1>
+          
+        
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+      
       </header>
       <Grid></Grid>
     </div>
