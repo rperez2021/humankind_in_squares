@@ -3,9 +3,10 @@ import './Grid.css';
 
 /**
  * Creates the grid element.
+ * @param {property} props Here be props
  * @return {function} Returns the Grid Element
  */
-function Grid() {
+function Grid(props) {
   return (
     <div className="container mx-auto px-4 my-20">
       <div className="Grid">
