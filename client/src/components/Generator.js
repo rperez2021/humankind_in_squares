@@ -11,35 +11,19 @@ class Generator extends Component {
     this.props.onDelete(e);
   }
   handleEdit(e) {
-    console.log(e);
-    this.props.onEdit(e);
+    e.preventDefault();
+    console.log(e.target[0]);
+    this.props.onEdit(e.target[0]);
   }
   handleShowEdit(e) {
     this.props.onShowEdit(e);
-  }
-  renderEdit() {
-    if (this.props.tasks.edit === false) {
-      return null;
-    } else {
-      return (
-        <div>
-          <input type="text" placeholder={task.taskName} />
-          <button
-            uuid={task.id}
-            onClick={this.handleEdit.bind(this, task.id)}
-            className='bg-blue-500 hover:bg-blue-700 text-white
-              font-bold py-2 px-4 rounded'>Save
-          </button>
-        </div>
-      );
-    }
   }
   render() {
     return (
       <div>
         <p>{this.props.tasks.map((task, index) => {
           return (
-            <li className='list-none' id={task.id} key={task.id}>
+            <li className='list-none' key={task.id}>
               {index + 1} {task.taskName}
               <button
                 uuid={task.id}
@@ -51,7 +35,17 @@ class Generator extends Component {
                 onClick={this.handleShowEdit.bind(this, task.id)}
                 className='bg-red-500 hover:bg-red-700 text-white
                 font-bold py-2 px-4 rounded'>Edit</button>
-              {this.renderEdit()}
+              {task.edit === true &&
+                <form onSubmit={this.handleEdit}>
+                  <input id={task.id} type="text"
+                    placeholder={task.taskName} />
+                  <input
+                    type='submit'
+                    uuid={task.id}
+                    className='bg-blue-500 hover:bg-blue-700 text-white
+                          font-bold py-2 px-4 rounded' />
+                </form>
+              }
             </li>
           );
         })}
