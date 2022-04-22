@@ -37,20 +37,27 @@ class App extends Component {
       }),
     });
   };
-  editItem = (e) => {
-    this.setState({
-      tasks: this.state.tasks.map(function(task) {
-        task.id === e;
-        return task.taskName;
-      },
-      ),
-    });
-  };
   showEdit = (e) => {
     this.setState((state) => {
       const tasks = state.tasks.map((task) => {
         if (task.id === e) {
           task.edit = true;
+          return task;
+        }
+        return task;
+      });
+      return {
+        tasks,
+      };
+    });
+  };
+  editItem = (e) => {
+    console.log(e);
+    this.setState((state) => {
+      const tasks = state.tasks.map((task) => {
+        if (task.id === e.id) {
+          task.taskName = e.value;
+          task.edit = false;
           return task;
         }
         return task;
