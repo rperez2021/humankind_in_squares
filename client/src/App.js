@@ -3,7 +3,7 @@ import './App.css';
 import Grid from './components/Grid';
 import Generator from './components/Generator';
 import uniqid from 'uniqid';
-
+import Buck from './components/Buck';
 
 class App extends Component {
   constructor() {
@@ -92,6 +92,7 @@ class App extends Component {
           onDelete={this.deleteItem}
           onEdit={this.editItem}
           onShowEdit={this.showEdit}></Generator>
+        <Buck></Buck>
         <Grid></Grid>
       </div>
     );
