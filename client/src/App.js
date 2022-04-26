@@ -4,6 +4,7 @@ import Grid from './components/Grid';
 import Generator from './components/Generator';
 import uniqid from 'uniqid';
 import Buck from './components/Buck';
+import Header from './components/Header';
 
 class App extends Component {
   constructor() {
@@ -70,13 +71,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
-            Welcome to Humankind In Squares
-            <br></br>
-            Feel free to Add!
-          </p>
-        </header>
+        <Header />
         <form onSubmit={this.addTask}>
           <label htmlFor="fname">Add Your Task:</label><br />
           <input type="text" id="task" />

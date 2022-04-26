@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import RouteSwitch from './RouteSwitch';
+import BrowserRouter from './RouteSwitch';
 
 ReactDOM.render(
     <React.StrictMode>
-      <RouteSwitch />
+      <BrowserRouter>
+      </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root'),
 );

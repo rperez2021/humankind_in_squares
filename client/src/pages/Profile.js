@@ -1,10 +1,10 @@
 import React from 'react';
+import Header from '../components/Header';
 
 const Profile = () => {
   return (
-    <div>
-      <h1>Hello from Profile</h1>
-    </div>
+    <Header>
+    </Header>
   );
 };
 
